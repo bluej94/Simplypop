@@ -23,8 +23,9 @@ cd ~/docker-projects/simplypop
 cp simplypop-api/.env.example simplypop-api/.env
 cp simplypop-web/.env.example simplypop-web/.env
 
-# Fresh install only: SimplyPop uses its own database login. (Moving from the
-# old server? restore.sh brings it along — skip this.)
+# Fresh install only: SimplyPop uses its own database login. The Server repo's
+# install.sh creates it for you; restore.sh brings it along when moving.
+# By hand:
 ~/docker-projects/postgres/create-app-db.sh simplypop
 
 docker-compose up -d --build
