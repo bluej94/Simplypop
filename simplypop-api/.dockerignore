@@ -1,0 +1,10 @@
+# Secrets reach the container through docker-compose's env_file, never the image.
+.env
+.env.*
+!.env.example
+.git
+__pycache__
+.venv
+*.pyc
+# Mount point for /home/jgijon/docker-volumes/simplypop (uploads), not source
+simplypop

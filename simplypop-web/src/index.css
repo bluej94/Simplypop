@@ -1,0 +1,54 @@
+@import "tailwindcss";
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+/* ── Design Tokens ── */
+@theme {
+  --color-cream: #FAF7F3;
+  --color-cream-deep: #F0EAE0;
+  --color-charcoal: #2C2420;
+  --color-charcoal-light: #4A3E3A;
+  --color-rose: #B07070;
+  --color-rose-light: #E8CFC9;
+  --color-gold: #C9A96E;
+  --color-gold-light: #EAD9BE;
+  --color-warm-gray: #8C7B70;
+  --color-warm-line: #E2D9CF;
+
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --font-display: 'Cormorant Garant', Georgia, serif;
+}
+
+/* ── Base ── */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: #FAF7F3;
+  color: #2C2420;
+}
+
+/* ── Slick carousel dot / arrow overrides ── */
+.slick-dots li button:before {
+  color: #C9A96E;
+  opacity: 0.4;
+}
+.slick-dots li.slick-active button:before {
+  color: #C9A96E;
+  opacity: 1;
+}
+.slick-prev:before,
+.slick-next:before {
+  color: #2C2420;
+}
+
+/* ── Fade in ── */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.25s ease-out;
+}

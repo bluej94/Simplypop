@@ -1,0 +1,61 @@
+# ==================================================
+# SimplyPop Project - .gitignore
+# ==================================================
+
+# Environment files (CRITICAL - contains secrets, API keys, passwords)
+.env
+.env.*
+!.env.example
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# Docker volumes
+volumes/
+
+# Logs
+*.log
+logs/
+
+# User uploaded content (may contain client personal images)
+simplypop/gallery/*
+simplypop/client/*
+!simplypop/gallery/.gitkeep
+!simplypop/client/.gitkeep
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*
+.claude/
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# Dependencies
+node_modules/
+
+# A per-machine Cloudflare tunnel, if one is ever added to compose (see README.md)
+docker-compose.override.yml

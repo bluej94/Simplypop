@@ -1,0 +1,39 @@
+services:
+  fastapi:
+    build: ./simplypop-api
+    container_name: simplypop-api
+    restart: unless-stopped
+    volumes:
+      # Mount your existing simplypop directory
+      - /home/jgijon/docker-volumes/simplypop/:/app/simplypop
+    expose:
+      - "8001"
+    env_file:
+      - ./simplypop-api/.env
+    networks:
+      - app-network
+      - shared-network
+    #depends_on:
+    #  database:
+    #    condition: service_healthy
+
+  frontend:
+    build: ./simplypop-web
+    container_name: simplypop-frontend
+    restart: unless-stopped
+    expose:
+      - "80"
+    # Port 80 is now handled by the standalone nginx-proxy
+    # ports:
+    #   - "80:80"
+    depends_on:
+      - fastapi
+    networks:
+      - app-network
+      - shared-network
+
+networks:
+  app-network:
+    driver: bridge
+  shared-network:
+    external: true

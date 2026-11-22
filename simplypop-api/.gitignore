@@ -1,0 +1,64 @@
+# ==================================================
+# SimplyPop API - .gitignore
+# ==================================================
+
+# Environment files (CRITICAL - contains SECRET_KEY, passwords, Discord webhook)
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.pyc
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# User uploads (client personal data and images)
+simplypop/
+uploads/
+gallery/
+client/
+
+# Logs
+*.log
+logs/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*
+.claude/
+
+# Build
+dist/
+build/
+*.egg-info/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary
+*.tmp
+*.bak
+*.swp
+*~
