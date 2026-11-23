@@ -11,8 +11,7 @@ services:
     env_file:
       - ./simplypop-api/.env
     networks:
-      - app-network
-      - shared-network
+      - simplypop-net
     #depends_on:
     #  database:
     #    condition: service_healthy
@@ -29,11 +28,11 @@ services:
     depends_on:
       - fastapi
     networks:
-      - app-network
-      - shared-network
+      - simplypop-net
 
+# This app's own network, shared only with nginx-proxy and postgres-server, so no
+# other app can reach these containers. Created by ~/docker-projects/install.sh
+# as 172.27.0.0/16.
 networks:
-  app-network:
-    driver: bridge
-  shared-network:
+  simplypop-net:
     external: true
